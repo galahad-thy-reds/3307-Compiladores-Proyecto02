@@ -341,4 +341,4 @@ Este proyecto es parte de una asignación académica del curso Compiladores (330
 
 ## Autor
 
-eduardo
+Andres Eduardo Rojas Jimenez
