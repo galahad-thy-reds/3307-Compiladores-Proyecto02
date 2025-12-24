@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)https://aprende.uned.ac.cr/pluginfile.php/260563/mod_resource/content/2/Proyecto%202-Ejemplo%202.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JavaScript</title>
+    <script>
+        // Función en JavaScript
+        function realizarOperaciones() {
+		    // Constante
+            const constante = 5;
+			const prueba;
+			// Punto 3. No tiene asignacion
+			
+			var total*;
+			// Punto 2. Nombre de la variable incorrecto
+			const valor = 2;
+			// Punto 3. Debe estar antes del comando var
+			
+            // Obtener el valor del campo de entrada
+            var numero = parseFloat(document.getElementById('numero').value);
+			// Punto 6. El ID del control no existe
+			
+            constante = 8;
+			// Punto 3. No se puede modificar el valor luego declarada
+			let a = 0;
+			a = "hola";
+			// Punto 4. tipos de datos de las variables que aparecen a la derecha del igual coinciden con el tipo de datos de izquierda
+			
+            // Operador de Asignación (=)
+            var resultadoAsignacion = numero;
+            var function = 4 ;
+			// Punto 2. No es permitido porque es una palabra reservada
+			
+            // Operadores de Asignación Compuesta
+            resultadoAsignacion += constante; // Suma y asignación
+            resultadoAsignacion *= 2; // Multiplicación y asignación
+			resultadoAsignacion =* 1; 
+			// Punto 4. Operador asignacion compuesto incorrecto
+
+            // Operador de Resta y Asignación -=
+            resultadoAsignacion -= 3;
+			resultadoAsignacion =- 3;
+			// Punto 4. Operador asignacion compuesto incorrecto
+
+            // Operador de Asignación en Cadena (=) o (+=)
+            let Num1, Num2, Num3;
+            Num1 = Num2 = Num3 = 42;
+			
+			num1 = 3;
+			// Punto 2. variable no existe porque es en minuscula la letra n
+			
+            // Mostrar el resultado en el área de salida
+            var cadenaResultado = "El resultado final es: " + resultadoAsignacion + "<br>";
+            cadenaResultado += "Num1 = " + Num1 + ", Num2 = " + Num2 + ", Num3 = " + Num3;
+
+            document.getElementById('Salida').innerHTML = cadenaResultado;
+			// Punto 7. El identificador no existe
+        }
+		
+		function 1calcularSalario() {
+		}
+		// Punto 5. Funcion no cumple con la sintaxis
+		
+    </script>
+</head>
+<body>
+    <h1>Ejemplo JavaScript con Operaciones de Asignación</h1>
+
+    <!-- Formulario de entrada -->
+    <label for="numeroEntrada">Ingrese un número:</label>
+    <input type="text" id="numeroEntrada">
+    <button onclick="realizarOperaciones()">Realizar Operaciones</button>
+
+    <!-- Área de salida -->
+    <div id="resultadoSalida"></div>
+
+
+</body></html>

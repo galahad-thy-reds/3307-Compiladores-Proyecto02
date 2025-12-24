@@ -1,0 +1,44 @@
+0001 <html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     Error 2: Missing <head> tag. Required structure: <html> -> <head> -> <body> at line 1
+     Error 3: Missing <body> tag. Required structure: <html> -> <head> -> <body> at line 1
+0002     <title>Calculadora de Edad</title>
+0003 </head>
+0004 <body>
+0005     <h1>Calculadora de Edad</h1>
+0006 
+0007     <label for="nombre">Nombre Completo: </label>
+0008     <input type="text" id="nombre" placeholder="Nombre Completo">
+0009 
+0010     <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+0011     <input type="date" id="fechaNacimiento">
+0012 
+0013     <button onclick="calcularEdad()">Calcular Edad</button>
+0014 
+0015     <p id="resultado"></p>
+0016 <!DOCTYPE html>
+     Error 1: DOCTYPE declaration must be at the very beginning of the document at line 16
+0017     <script>
+0018         function calcularEdad() {
+0019             const nombre = document.getElementById("nombre").value;
+0020             const fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
+0021             const fechaHoy = new Date();
+0022             const edad = fechaHoy.getFullYear() - fechaNacimiento.getFullYear();
+0023 
+0024             let resultado = `${nombre}, tienes ${edad} años de edad. Eres `;
+0025             if (edad < 18) {
+0026                 resultado += "menor de edad.";
+0027             } else if (edad >= 18 && edad < 65) {
+0028                 resultado += "mayor de edad.";
+0029             } else {
+0030                 resultado += "adulto mayor.";
+0031             }
+0032 
+0033             document.getElementById("resultado").innerHTML = resultado;
+0034         }
+0035     </script>
+0036 <html>
+0037 
+0038 <!-- Punto 8. Falta el cierre del body -->
+0039 <!-- Punto 8. Falta el cierre de html y esta repetido  -->
+0040 <!-- Punto 8. !DOCTYPE esta en posicion incorrecta  -->
+0041 <!-- Punto 8. Falta la etiqueta inicio del head -->

@@ -1,0 +1,50 @@
+0001 <!DOCTYPE html>
+0002 <!-- saved from url=(0101)https://aprende.uned.ac.cr/pluginfile.php/260563/mod_resource/content/2/Proyecto%202-Ejemplo%202.html -->
+0003 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+0004     
+0005     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+0006     <title>Ejemplo JavaScript</title>
+0007     <script>
+0008         // Función en JavaScript
+0009         function realizarOperaciones() {
+0010             // Obtener el valor del campo de entrada
+0011             var numero = parseFloat(document.getElementById('numeroEntrada').value);
+0012 
+0013             // Constante
+0014             const constante = 5;
+0015 
+0016             // Operador de Asignación (=)
+0017             var resultadoAsignacion = numero;
+0018 
+0019             // Operadores de Asignación Compuesta
+0020             resultadoAsignacion += constante; // Suma y asignación
+0021             resultadoAsignacion *= 2; // Multiplicación y asignación
+0022 
+0023             // Operador de Resta y Asignación -=
+0024             resultadoAsignacion -= 3;
+0025 
+0026             // Operador de Asignación en Cadena (=) o (+=)
+0027             let Num1, Num2, Num3;
+0028             Num1 = Num2 = Num3 = 42;
+0029 
+0030             // Mostrar el resultado en el área de salida
+0031             var cadenaResultado = "El resultado final es: " + resultadoAsignacion + "<br>";
+0032             cadenaResultado += "Num1 = " + Num1 + ", Num2 = " + Num2 + ", Num3 = " + Num3;
+0033 
+0034             document.getElementById('resultadoSalida').innerHTML = cadenaResultado;
+0035         }
+0036     </script>
+0037 </head>
+0038 <body>
+0039     <h1>Ejemplo JavaScript con Operaciones de Asignación</h1>
+0040 
+0041     <!-- Formulario de entrada -->
+0042     <label for="numeroEntrada">Ingrese un número:</label>
+0043     <input type="text" id="numeroEntrada">
+0044     <button onclick="realizarOperaciones()">Realizar Operaciones</button>
+0045 
+0046     <!-- Área de salida -->
+0047     <div id="resultadoSalida"></div>
+0048 
+0049 
+0050 </body></html>

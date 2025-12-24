@@ -1,0 +1,41 @@
+<html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Calculadora de Edad</title>
+</head>
+<body>
+    <h1>Calculadora de Edad</h1>
+
+    <label for="nombre">Nombre Completo: </label>
+    <input type="text" id="nombre" placeholder="Nombre Completo">
+
+    <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+    <input type="date" id="fechaNacimiento">
+
+    <button onclick="calcularEdad()">Calcular Edad</button>
+
+    <p id="resultado"></p>
+<!DOCTYPE html>
+    <script>
+        function calcularEdad() {
+            const nombre = document.getElementById("nombre").value;
+            const fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
+            const fechaHoy = new Date();
+            const edad = fechaHoy.getFullYear() - fechaNacimiento.getFullYear();
+
+            let resultado = `${nombre}, tienes ${edad} años de edad. Eres `;
+            if (edad < 18) {
+                resultado += "menor de edad.";
+            } else if (edad >= 18 && edad < 65) {
+                resultado += "mayor de edad.";
+            } else {
+                resultado += "adulto mayor.";
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+<html>
+
+<!-- Punto 8. Falta el cierre del body -->
+<!-- Punto 8. Falta el cierre de html y esta repetido  -->
+<!-- Punto 8. !DOCTYPE esta en posicion incorrecta  -->
+<!-- Punto 8. Falta la etiqueta inicio del head -->

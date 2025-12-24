@@ -1,0 +1,50 @@
+---
+globs: **/validators/*.java
+description: Patterns and conventions for implementing validators
+---
+
+# Validator Implementation Patterns
+
+## Validator Interface
+
+All validators should implement a common `Validator` interface (to be created in [validators/Validator.java](mdc:src/validators/Validator.java)):
+
+```java
+public interface Validator {
+    void validate(ast.html.DocumentNode document, errors.ErrorCollector errorCollector);
+}
+```
+
+## Validator Requirements
+
+The project implements 8 validators corresponding to the 8 requirements:
+
+1. **ErrorReporter** (Requirement #1) - Generate numbered TXT file with errors
+2. **IdentifierValidator** (Requirement #2) - Validate JavaScript identifiers
+3. **ConstantValidator** (Requirement #3) - Validate const declarations
+4. **AssignmentValidator** (Requirement #4) - Validate assignments and type checking
+5. **FunctionValidator** (Requirement #5) - Validate function definitions
+6. **DataInputValidator** (Requirement #6) - Validate getElementById calls
+7. **DataOutputValidator** (Requirement #7) - Validate innerHTML assignments
+8. **HtmlStructureValidator** (Requirement #8) - Validate HTML structure and DOCTYPE
+
+## Error Reporting Pattern
+
+All validators should:
+1. Traverse the AST nodes relevant to their validation
+2. Use [ErrorCollector](mdc:src/errors/ErrorCollector.java) to collect errors (not print directly)
+3. Include line numbers from AST nodes: `node.getLineNumber()`
+4. Provide clear error descriptions following the format: `"Error [number]: [description] at line [line]"`
+
+## AST Traversal
+
+Validators traverse the AST starting from [DocumentNode](mdc:src/ast/html/DocumentNode.java):
+- Access HTML structure via `documentNode.getChildren()` and `tagNode.getChildren()`
+- Access JavaScript via `ScriptNode.getStatements()`
+- Use recursive traversal for nested structures
+
+## Context Access
+
+Validators can access parser context:
+- HTML element IDs: `parser.getHtmlElementIds()` (for Requirements #6 and #7)
+- Declared variables: `parser.getDeclaredVariables()` (for scope checking)

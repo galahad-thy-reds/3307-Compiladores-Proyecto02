@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)https://aprende.uned.ac.cr/pluginfile.php/260558/mod_resource/content/2/Proyecto%202-Ejemplo%201.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Calculadora de Edad</title>
+</head>
+<body>
+    <h1>Calculadora de Edad</h1>
+
+    <label for="nombre">Nombre Completo: </label>
+    <input type="text" id="nombre" placeholder="Nombre Completo">
+
+    <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+    <input type="date" id="fechaNacimiento">
+
+    <button onclick="calcularEdad()">Calcular Edad</button>
+
+    <p id="resultado"></p>
+
+    <script>
+	    function calcularSalario() {
+		}
+		// Punto 5. Funcion no cumple con la sintaxis
+		
+        function calcularEdad() {
+            const nombre = document.getElementById("nombre").value;
+            const fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
+            const fechaHoy = new Date();
+            const edad = fechaHoy.getFullYear() - fechaNacimiento.getFullYear();
+			
+            let 12Conteo;
+			// Punto 2. Nombre de la variable incorrecto
+            let resultado = `${nombre}, tienes ${edad} años de edad. Eres `;
+			let suma = 2;
+			suma == 5;
+			// Punto 4. operador de asigacion incorrecto solo es un igual
+			
+			total = 3;
+			// Punto 2. Variable no ha sido declarada
+			
+            if (edad < 18) {
+                resultado += "menor de edad.";
+            } else if (edad >= 18 && edad < 65) {
+                resultado += "mayor de edad.";
+            } else {
+                resultado += "adulto mayor.";
+            }
+			suma += 5;
+			suma =+ 8;
+			// Punto 4. operador asignacion compueto incorrecto
+			suma -= 1;
+
+			
+			Edad = 15;
+			// Punto 3. Variable no ha sido declarada 
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+
+
+</body></html>

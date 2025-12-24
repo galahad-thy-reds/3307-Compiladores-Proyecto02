@@ -1,0 +1,61 @@
+0001 <!DOCTYPE html>
+0002 <!-- saved from url=(0101)https://aprende.uned.ac.cr/pluginfile.php/260558/mod_resource/content/2/Proyecto%202-Ejemplo%201.html -->
+0003 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+0004     <title>Calculadora de Edad</title>
+0005 </head>
+0006 <body>
+0007     <h1>Calculadora de Edad</h1>
+0008 
+0009     <label for="nombre">Nombre Completo: </label>
+0010     <input type="text" id="nombre" placeholder="Nombre Completo">
+0011 
+0012     <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+0013     <input type="date" id="fechaNacimiento">
+0014 
+0015     <button onclick="calcularEdad()">Calcular Edad</button>
+0016 
+0017     <p id="resultado"></p>
+0018 
+0019     <script>
+0020 	    function calcularSalario() {
+     Error 1: Function body must contain at least one statement at line 20
+0021 		}
+0022 		// Punto 5. Funcion no cumple con la sintaxis
+0023 		
+0024         function calcularEdad() {
+0025             const nombre = document.getElementById("nombre").value;
+0026             const fechaNacimiento = new Date(document.getElementById("fechaNacimiento").value);
+0027             const fechaHoy = new Date();
+0028             const edad = fechaHoy.getFullYear() - fechaNacimiento.getFullYear();
+0029 			
+0030             let 12Conteo;
+0031 			// Punto 2. Nombre de la variable incorrecto
+0032             let resultado = `${nombre}, tienes ${edad} años de edad. Eres `;
+0033 			let suma = 2;
+0034 			suma == 5;
+0035 			// Punto 4. operador de asigacion incorrecto solo es un igual
+0036 			
+0037 			total = 3;
+0038 			// Punto 2. Variable no ha sido declarada
+0039 			
+0040             if (edad < 18) {
+0041                 resultado += "menor de edad.";
+0042             } else if (edad >= 18 && edad < 65) {
+0043                 resultado += "mayor de edad.";
+0044             } else {
+0045                 resultado += "adulto mayor.";
+0046             }
+0047 			suma += 5;
+0048 			suma =+ 8;
+0049 			// Punto 4. operador asignacion compueto incorrecto
+0050 			suma -= 1;
+0051 
+0052 			
+0053 			Edad = 15;
+0054 			// Punto 3. Variable no ha sido declarada 
+0055             document.getElementById("resultado").innerHTML = resultado;
+0056         }
+0057     </script>
+0058 
+0059 
+0060 </body></html>

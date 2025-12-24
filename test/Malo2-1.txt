@@ -1,0 +1,36 @@
+0001 <!DOCTYPE html>
+0002 <!-- saved from url=(0101)https://aprende.uned.ac.cr/pluginfile.php/260558/mod_resource/content/2/Proyecto%202-Ejemplo%201.html -->
+0003 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+0004     <title>Calculadora de Edad</title>
+0005 </head>
+0006 <body>
+0007     <h1>Calculadora de Edad</h1>
+0008 
+0009     <label for="nombre">Nombre Completo: </label>
+0010     <input type="text" id="nombre" placeholder="Nombre Completo">
+0011 
+0012     <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+0013     <input type="date" id="fechaNacimiento">
+0014 
+0015     <button onclick="calcularEdad()">Calcular Edad</button>
+0016 
+0017     <p id="resultado"></p>
+0018 
+0019     <script>
+0020 	    function calcularSalario() {
+     Error 1: Function body must contain at least one statement at line 20
+0021 		}
+0022 		// Punto 5. Funcion no cumple con la sintaxis
+0023 		
+0024         function calcularEdad() {
+0025 			
+0026             let suma = 2;
+0027 			
+0028 			total = 3;
+0029 			// Punto 2. Variable no ha sido declarada
+0030 			
+0031         }
+0032     </script>
+0033 
+0034 
+0035 </body></html>

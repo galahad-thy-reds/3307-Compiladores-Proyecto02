@@ -1,0 +1,50 @@
+---
+alwaysApply: true
+description: Java coding standards and conventions for this project
+---
+
+# Coding Standards
+
+## Java Conventions
+
+- Use Java 21 (as specified in [nbproject/project.properties](mdc:nbproject/project.properties))
+- Follow standard Java naming conventions:
+  - Classes: PascalCase
+  - Methods/Variables: camelCase
+  - Constants: UPPER_SNAKE_CASE
+  - Packages: lowercase
+
+## Documentation
+
+- All public classes and methods must have JavaDoc comments
+- Include `@author eduardo` in class-level JavaDoc
+- Document parameters, return values, and exceptions
+- Explain complex logic with inline comments
+
+## Error Handling
+
+- Use [ErrorCollector](mdc:src/errors/ErrorCollector.java) for all error reporting
+- Never print errors directly to console
+- Include line numbers in all error messages
+- Format errors as: `"Error [number]: [description] at line [line]"`
+
+## Project Constraints
+
+- **No third-party libraries** - All code must be self-contained
+- **Portable execution** - Program must run independently on any machine
+- **NetBeans IDE** - Use NetBeans in character mode (not graphical)
+- **Modular design** - Use functions/classes for organization
+
+## File Organization
+
+- One public class per file
+- Package structure matches directory structure
+- Keep related classes in the same package
+- Use meaningful package names: `lexer`, `parser`, `ast`, `validators`, `errors`, `utils`
+
+## Code Quality
+
+- Fix all linter errors before committing
+- Use meaningful variable and method names
+- Keep methods focused on a single responsibility
+- Avoid deep nesting (max 3-4 levels)

@@ -1,0 +1,79 @@
+---
+globs: **/ast/**/*.java,**/validators/*.java,**/parser/*.java
+description: How to work with AST nodes
+---
+
+# AST Node Usage Guide
+
+## Base Interface
+
+All AST nodes implement [Node.java](mdc:src/ast/Node.java) which provides:
+- `getLineNumber()` - Line number (1-indexed) for error reporting
+- `getColumnNumber()` - Column number (1-indexed)
+
+## HTML AST Nodes
+
+### DocumentNode
+- Root node of the AST
+- Access: `getDoctype()`, `getHtmlTag()`, `getChildren()`
+- Located at: [ast/html/DocumentNode.java](mdc:src/ast/html/DocumentNode.java)
+
+### TagNode
+- Represents HTML tags
+- Access: `getTagName()`, `getAttributes()`, `getChildren()`, `isSelfClosing()`, `isClosingTag()`
+- Located at: [ast/html/TagNode.java](mdc:src/ast/html/TagNode.java)
+
+### AttributeNode
+- HTML attributes with name and value
+- Access: `getName()`, `getValue()`
+- Located at: [ast/html/AttributeNode.java](mdc:src/ast/html/AttributeNode.java)
+
+### TextNode
+- Text content within HTML
+- Access: `getText()`
+- Located at: [ast/html/TextNode.java](mdc:src/ast/html/TextNode.java)
+
+## JavaScript AST Nodes
+
+### ScriptNode
+- Container for JavaScript statements
+- Access: `getStatements()` - List of all statements in the script
+- Located at: [ast/js/ScriptNode.java](mdc:src/ast/js/ScriptNode.java)
+
+### FunctionNode
+- Function declarations
+- Access: `getFunctionName()`, `getParameters()`, `getBodyStatements()`
+- Located at: [ast/js/FunctionNode.java](mdc:src/ast/js/FunctionNode.java)
+
+### VariableNode
+- `let` or `var` declarations
+- Access: `getKeyword()`, `getIdentifier()`, `getInitialValue()`
+- Located at: [ast/js/VariableNode.java](mdc:src/ast/js/VariableNode.java)
+
+### ConstantNode
+- `const` declarations
+- Access: `getIdentifier()`, `getValue()` (always required)
+- Located at: [ast/js/ConstantNode.java](mdc:src/ast/js/ConstantNode.java)
+
+### AssignmentNode
+- Assignment operations (=, +=, -=, etc.)
+- Access: `getLeftHandSide()`, `getOperator()`, `getRightHandSide()`
+- Located at: [ast/js/AssignmentNode.java](mdc:src/ast/js/AssignmentNode.java)
+
+### CallNode
+- Function/method calls (e.g., `document.getElementById("id")`)
+- Access: `getCallee()`, `getArguments()`
+- Located at: [ast/js/CallNode.java](mdc:src/ast/js/CallNode.java)
+
+### IdentifierNode
+- Variable/function names
+- Access: `getName()`
+- Located at: [ast/js/IdentifierNode.java](mdc:src/ast/js/IdentifierNode.java)
+
+## Traversal Pattern
+
+When traversing AST:
+1. Start from `DocumentNode`
+2. Use recursive methods to visit all nodes
+3. Check node types using `instanceof`
+4. Always use `getLineNumber()` for error reporting

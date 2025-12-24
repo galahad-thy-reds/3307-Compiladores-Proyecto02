@@ -1,0 +1,62 @@
+0001 <!DOCTYPE html>
+0002 <!-- saved from url=(0101)https://aprende.uned.ac.cr/pluginfile.php/260563/mod_resource/content/2/Proyecto%202-Ejemplo%202.html -->
+0003 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     Error 2: Missing <body> tag. Required structure: <html> -> <head> -> <body> at line 3
+0004     
+0005     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+0006     <title>Ejemplo JavaScript</title>
+0007     <script>
+0008         // Función en JavaScript
+0009         function realizarOperaciones() {
+0010 		    // Constante
+0011             const constante = 5;
+0012 			const prueba;
+     Error 1: Constant must be assigned a value at declaration at line 12
+0013 			// Punto 3. No tiene asignacion
+0014 			
+0015 			
+0016 			// Punto 2. Nombre de la variable incorrecto
+0017 			const valor = 2;
+0018 			// Punto 3. Debe estar antes del comando var
+0019 			
+0020             // Punto 6. El ID del control no existe
+0021 			
+0022             constante = 8;
+0023 			// Punto 3. No se puede modificar el valor luego declarada
+0024 			let a = 0;
+0025 			a = "hola";
+0026 			// Punto 4. tipos de datos de las variables que aparecen a la derecha del igual coinciden con el tipo de datos de izquierda
+0027 			
+0028             // Operador de Asignación (=)
+0029             var resultadoAsignacion = numero;
+0030             var function = 4 ;
+0031 			// Punto 2. No es permitido porque es una palabra reservada
+0032 			
+0033             
+0034             // Operador de Asignación en Cadena (=) o (+=)
+0035             let Num1, Num2, Num3;
+0036             Num1 = Num2 = Num3 = 42;
+0037 			
+0038 			num1 = 3;
+0039 			// Punto 2. variable no existe porque es en minuscula la letra n
+0040 			
+0041             // Mostrar el resultado en el área de salida
+0042             var cadenaResultado = "El resultado final es: " + resultadoAsignacion + "<br>";
+0043 			// Punto 7. El identificador no existe
+0044         }
+0045 		
+0046     </script>
+0047 </head>
+0048 <body>
+0049     <h1>Ejemplo JavaScript con Operaciones de Asignación</h1>
+0050 
+0051     <!-- Formulario de entrada -->
+0052     <label for="numeroEntrada">Ingrese un número:</label>
+0053     <input type="text" id="numeroEntrada">
+0054     <button onclick="realizarOperaciones()">Realizar Operaciones</button>
+0055 
+0056     <!-- Área de salida -->
+0057     <div id="resultadoSalida"></div>
+0058 
+0059 
+0060 </body></html>

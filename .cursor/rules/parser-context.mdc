@@ -1,0 +1,44 @@
+---
+globs: **/parser/*.java,**/validators/*.java
+description: Parser context and helper methods
+---
+
+# Parser Context Usage
+
+## Context Tracking
+
+The [Parser.java](mdc:src/parser/Parser.java) maintains context during parsing:
+
+### HTML Element IDs
+- Tracked automatically during HTML parsing
+- Access via: `parser.getHtmlElementIds()` - Returns `List<String>`
+- Used by validators for Requirements #6 and #7
+
+### Declared Variables
+- Tracked during JavaScript parsing (let, var, const)
+- Access via: `parser.getDeclaredVariables()` - Returns `List<String>`
+- Used for scope checking in Requirement #3
+
+## Parser State
+
+The parser uses [ParserState.java](mdc:src/parser/ParserState.java) enum:
+- `HTML_MODE` - Parsing HTML content
+- `SCRIPT_MODE` - Parsing JavaScript
+- Other states for comments, strings, etc.
+
+## Accessing Parser Context
+
+When implementing validators:
+1. Parser context is available after parsing completes
+2. Store parser reference in ValidatorEngine
+3. Pass context to validators that need it (e.g., HtmlElementValidator)
+
+## Example Usage
+
+```java
+// In ValidatorEngine or validator
+List<String> htmlIds = parser.getHtmlElementIds();
+if (!htmlIds.contains(requiredId)) {
+    errorCollector.addError(new Error(lineNumber, "ID not found: " + requiredId));
+}
+```

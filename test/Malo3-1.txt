@@ -1,0 +1,30 @@
+0001 <html><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     Error 3: Missing <head> tag. Required structure: <html> -> <head> -> <body> at line 1
+     Error 4: Missing <body> tag. Required structure: <html> -> <head> -> <body> at line 1
+0002     <title>Calculadora de Edad</title>
+0003 </head>
+0004 <body>
+0005     <h1>Calculadora de Edad</h1>
+0006 
+0007     <label for="nombre">Nombre Completo: </label>
+0008     <input type="text" id="nombre" placeholder="Nombre Completo">
+0009 
+0010     <label for="fechaNacimiento">Fecha de Nacimiento: </label>
+0011     <input type="date" id="fechaNacimiento">
+0012 
+0013     <button onclick="calcularEdad()">Calcular Edad</button>
+0014 
+0015     <p id="resultado"></p>
+0016 <!DOCTYPE html>
+     Error 2: DOCTYPE declaration must be at the very beginning of the document at line 16
+0017     <script>
+0018         function calcularEdad() {
+     Error 1: Function body must contain at least one statement at line 18
+0019         }
+0020     </script>
+0021 <html>
+0022 
+0023 <!-- Punto 8. Falta el cierre del body -->
+0024 <!-- Punto 8. Falta el cierre de html y esta repetido  -->
+0025 <!-- Punto 8. !DOCTYPE esta en posicion incorrecta  -->
+0026 <!-- Punto 8. Falta la etiqueta inicio del head -->

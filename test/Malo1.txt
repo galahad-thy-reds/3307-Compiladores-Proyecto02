@@ -1,0 +1,81 @@
+0001 <!DOCTYPE html>
+0002 <!-- saved from url=(0101)https://aprende.uned.ac.cr/pluginfile.php/260563/mod_resource/content/2/Proyecto%202-Ejemplo%202.html -->
+0003 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     Error 2: Missing <body> tag. Required structure: <html> -> <head> -> <body> at line 3
+0004     
+0005     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+0006     <title>Ejemplo JavaScript</title>
+0007     <script>
+0008         // Función en JavaScript
+0009         function realizarOperaciones() {
+0010 		    // Constante
+0011             const constante = 5;
+0012 			const prueba;
+     Error 1: Constant must be assigned a value at declaration at line 12
+0013 			// Punto 3. No tiene asignacion
+0014 			
+0015 			var total*;
+0016 			// Punto 2. Nombre de la variable incorrecto
+0017 			const valor = 2;
+0018 			// Punto 3. Debe estar antes del comando var
+0019 			
+0020             // Obtener el valor del campo de entrada
+0021             var numero = parseFloat(document.getElementById('numero').value);
+0022 			// Punto 6. El ID del control no existe
+0023 			
+0024             constante = 8;
+0025 			// Punto 3. No se puede modificar el valor luego declarada
+0026 			let a = 0;
+0027 			a = "hola";
+0028 			// Punto 4. tipos de datos de las variables que aparecen a la derecha del igual coinciden con el tipo de datos de izquierda
+0029 			
+0030             // Operador de Asignación (=)
+0031             var resultadoAsignacion = numero;
+0032             var function = 4 ;
+0033 			// Punto 2. No es permitido porque es una palabra reservada
+0034 			
+0035             // Operadores de Asignación Compuesta
+0036             resultadoAsignacion += constante; // Suma y asignación
+0037             resultadoAsignacion *= 2; // Multiplicación y asignación
+0038 			resultadoAsignacion =* 1; 
+0039 			// Punto 4. Operador asignacion compuesto incorrecto
+0040 
+0041             // Operador de Resta y Asignación -=
+0042             resultadoAsignacion -= 3;
+0043 			resultadoAsignacion =- 3;
+0044 			// Punto 4. Operador asignacion compuesto incorrecto
+0045 
+0046             // Operador de Asignación en Cadena (=) o (+=)
+0047             let Num1, Num2, Num3;
+0048             Num1 = Num2 = Num3 = 42;
+0049 			
+0050 			num1 = 3;
+0051 			// Punto 2. variable no existe porque es en minuscula la letra n
+0052 			
+0053             // Mostrar el resultado en el área de salida
+0054             var cadenaResultado = "El resultado final es: " + resultadoAsignacion + "<br>";
+0055             cadenaResultado += "Num1 = " + Num1 + ", Num2 = " + Num2 + ", Num3 = " + Num3;
+0056 
+0057             document.getElementById('Salida').innerHTML = cadenaResultado;
+0058 			// Punto 7. El identificador no existe
+0059         }
+0060 		
+0061 		function 1calcularSalario() {
+0062 		}
+0063 		// Punto 5. Funcion no cumple con la sintaxis
+0064 		
+0065     </script>
+0066 </head>
+0067 <body>
+0068     <h1>Ejemplo JavaScript con Operaciones de Asignación</h1>
+0069 
+0070     <!-- Formulario de entrada -->
+0071     <label for="numeroEntrada">Ingrese un número:</label>
+0072     <input type="text" id="numeroEntrada">
+0073     <button onclick="realizarOperaciones()">Realizar Operaciones</button>
+0074 
+0075     <!-- Área de salida -->
+0076     <div id="resultadoSalida"></div>
+0077 
+0078 
+0079 </body></html>

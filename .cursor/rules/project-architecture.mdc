@@ -1,0 +1,43 @@
+---
+alwaysApply: true
+description: Project architecture and component structure for HTML/JS validator
+---
+
+# HTML/JavaScript Validator - Project Architecture
+
+## System Pipeline
+
+The system follows a strict pipeline: **Lexer → Parser (State Machine) → AST → Validators → Error Reporter**
+
+## Core Components
+
+### Lexer Package ([lexer/](mdc:src/lexer/))
+- [TokenType.java](mdc:src/lexer/TokenType.java) - Enumeration of all token types
+- [Token.java](mdc:src/lexer/Token.java) - Token data structure with line/column tracking
+- [Lexer.java](mdc:src/lexer/Lexer.java) - Tokenizes HTML and JavaScript code
+
+### Parser Package ([parser/](mdc:src/parser/))
+- [ParserState.java](mdc:src/parser/ParserState.java) - Enumeration of parser states
+- [Parser.java](mdc:src/parser/Parser.java) - State machine parser that builds AST from tokens
+
+### AST Package ([ast/](mdc:src/ast/))
+- [Node.java](mdc:src/ast/Node.java) - Base interface for all AST nodes
+- HTML nodes: [DocumentNode](mdc:src/ast/html/DocumentNode.java), [TagNode](mdc:src/ast/html/TagNode.java), [AttributeNode](mdc:src/ast/html/AttributeNode.java), [TextNode](mdc:src/ast/html/TextNode.java)
+- JavaScript nodes: [ScriptNode](mdc:src/ast/js/ScriptNode.java), [FunctionNode](mdc:src/ast/js/FunctionNode.java), [VariableNode](mdc:src/ast/js/VariableNode.java), [ConstantNode](mdc:src/ast/js/ConstantNode.java), [AssignmentNode](mdc:src/ast/js/AssignmentNode.java), [ExpressionNode](mdc:src/ast/js/ExpressionNode.java), [CallNode](mdc:src/ast/js/CallNode.java), [IdentifierNode](mdc:src/ast/js/IdentifierNode.java)
+
+## Design Principles
+
+1. **State Machine Parser**: Handles HTML/JS mode switching cleanly
+2. **Comprehensive AST**: Full representation enables all validators to work independently
+3. **Error Collector**: Centralized error management before reporting
+4. **Line Number Tracking**: Every AST node stores its line number for error reporting
+
+## File Structure
+
+All source files are in [src/](mdc:src/) with packages:
+- `lexer/` - Tokenization
+- `parser/` - AST construction
+- `ast/` - AST node definitions
+- `validators/` - Validation rules (to be implemented)
+- `errors/` - Error management (to be implemented)
+- `utils/` - Utility classes (to be implemented)

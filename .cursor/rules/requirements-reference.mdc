@@ -1,0 +1,66 @@
+---
+description: Reference guide for the 8 validation requirements
+---
+
+# Validation Requirements Reference
+
+See full requirements in [docs/Proyecto 2_3307_v2.pdf](mdc:docs/Proyecto 2_3307_v2.pdf)
+
+## Requirement #1: Error File Generation (5 points)
+- Create numbered copy of HTML file with `.txt` extension
+- Format: `0001`, `0002`, etc. (4-digit line numbers)
+- List errors below problematic lines with error number, line reference, and description
+
+## Requirement #2: JavaScript Identifiers (10 points)
+- Must start with letter, underscore, or Unicode letter
+- Can contain letters, digits, underscores, Unicode characters
+- Cannot contain spaces or special chars (-, +, *, /, etc.)
+- Case-sensitive
+- Cannot be JavaScript reserved words
+- Must appear after `let` or `var` keywords
+
+## Requirement #3: Constants (10 points)
+- Name follows identifier rules (same as #2)
+- Must use `const` keyword
+- Must assign value immediately (cannot be uninitialized)
+- Cannot be reassigned
+- Must be declared before use
+- Cannot be declared after `var`/`let` in same scope
+
+## Requirement #4: Assignments (15 points)
+- Validate basic assignment (`=`)
+- Validate compound assignments (`+=`, `-=`, `*=`, `/=`))
+- Validate chain assignments (`a = b = c = 42`)
+- Type checking: All variables on right must match type of variable on left
+
+## Requirement #5: Function Definitions (15 points)
+- Must use `function` keyword
+- Must have function name (follows identifier rules)
+- Must have parentheses `()`
+- Must have body in curly braces `{ }`
+- Body must contain at least one statement
+- Parameters must be valid (follow identifier rules)
+- Functions must be within `<script></script>` tags
+
+## Requirement #6: Data Input (10 points)
+- Validate `document.getElementById("id").value` calls
+- Must verify that the ID inside quotes corresponds to an actual HTML element
+- The HTML element with that `id` attribute must exist
+
+## Requirement #7: Data Output (10 points)
+- Validate `document.getElementById("id").innerHTML = value` syntax
+- Must verify the ID inside quotes exists as an HTML element
+- Right side of `=` can be assumed correct
+
+## Requirement #8: HTML Structure (25 points - Most Important!)
+- All tags must have opening and closing tags (except `<!DOCTYPE html>`)
+- `<!DOCTYPE html>` must be exactly as shown
+- `<!DOCTYPE html>` must be at the very beginning
+- Required structure: `<!DOCTYPE html>` → `<html>` → `<head>` → `<body>` → `</body>` → `</html>`
+
+## Implementation Notes
+
+- Each validator should be a separate class in `validators/` package
+- Validators traverse the AST independently
+- All errors collected in `ErrorCollector` before reporting
+- Line numbers come from AST nodes: `node.getLineNumber()`
